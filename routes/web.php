@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('sidebare');
+    return view('login.login');
 });
+Route::get('/sidebar',function(){
+    return view('template.sidebare');
+});
+

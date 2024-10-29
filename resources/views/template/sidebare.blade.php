@@ -6,27 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>MOBAS</title>
+        <link rel="stylesheet" href="{{asset('css/sidebare.css')}}">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            /* Mengubah warna teks dan ikon saat .nav-link dihover */
+            .sb-sidenav .nav-link:hover {
+                color: #ebad00 !important; /* Ubah warna teks */
+            }
+    
+        </style>
+        
+      
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark " style="background-color: #00a373">
             <!-- Navbar Brand-->
-            <img src="{{asset('img/logofix_1.png') }}" alt="" style="width: 50px; margin-left: 10px">
+            <img src="{{asset('img/logofix_1.png') }}" alt="" style="width: 50px; margin-left: 15px; margin-top: 5px">
             <a class="navbar-brand ps-3" href="index.html">MOBAS</a>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars text-white"></i></button>
+            {{-- <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
-            </form>
+            </form> --}}
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0" ">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -39,56 +49,57 @@
             </ul>
         </nav>
             <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style="background-color: #00a373">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link " href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+            <div id="layoutSidenav_nav"  >
+                
+                <nav class="sb-sidenav accordion sb-sidenav-dark  text-white " id="sidenavAccordion" style="background-color: #00a373">
+                   
+                    <div class="sb-sidenav-menu" >
+                       
+                        <div class="nav ">
+                            <div class="sb-sidenav-menu-heading mt-4 ml-3 border-bottom">Dashboard</div>
+                            <a class="nav-link text-white  " href="index.html" >
+                                <div class="sb-nav-link-icon " ><i class="fas fa-tachometer-alt text-white "></i></div>
+                                Beranda
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        {{-- Menu Karyawan --}}
+                        <div class="sb-sidenav-menu-heading border-bottom ml-0 mt-0">Manage</div>
+
+                            <a class="nav-link collapsed text-white " href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns  text-white "></i></div>
+                               Mekanik
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down text-white"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link  text-white " href="layout-static.html">Data Mekanik</a>
+                                    <a class="nav-link  text-white " href="layout-sidenav-light.html">Tambah Mekanik</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+
+
+                            {{-- Menu Barang --}}
+                            <a class="nav-link collapsed  text-white " href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon  text-white "><i class="fas fa-book-open  text-white "></i></div>
+                                Barang
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down  text-white "></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link  text-white " href="layout-static.html">Data Barang</a>
+                                        <a class="nav-link  text-white " href="layout-sidenav-light.html">Tambah barang</a>
+                                    </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading border-bottom ml-0 mt-0"> Manage Promo</div>
+
+                            <a class="nav-link collapsed text-white " href="#" data-bs-toggle="collapse" data-bs-target="#collapsePromo" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns  text-white "></i></div>
+                                Layanan Promo
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down text-white"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePromo" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link  text-white " href="layout-static.html">Data Promo</a>
+                                    <a class="nav-link  text-white " href="layout-sidenav-light.html">Tambah Promo</a>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>
@@ -102,7 +113,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div class="sb-sidenav-footer "style="background-color: #00a373">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
                     </div>
